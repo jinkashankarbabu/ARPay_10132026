@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/ListReport"],function(e){"use strict";const t={actions:{},assertions:{}};return new e({appId:"com.redbull.fi.arpay",componentId:"HeaderList",contextPath:"/Header"},t)});
+//# sourceMappingURL=HeaderList.gen.js.map

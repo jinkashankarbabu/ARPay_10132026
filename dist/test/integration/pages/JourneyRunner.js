@@ -1,0 +1,2 @@
+sap.ui.define(["sap/fe/test/JourneyRunner","com/redbull/fi/arpay/test/integration/pages/HeaderList.gen","com/redbull/fi/arpay/test/integration/pages/HeaderObjectPage.gen","com/redbull/fi/arpay/test/integration/pages/ItemObjectPage.gen"],function(e,t,a,r){"use strict";const n=new e({launchUrl:sap.ui.require.toUrl("com/redbull/fi/arpay")+"/test/flp.html#app-preview",pages:{onTheHeaderListGenerated:t,onTheHeaderObjectPageGenerated:a,onTheItemObjectPageGenerated:r},async:true});return n});
+//# sourceMappingURL=JourneyRunner.js.map

@@ -1,0 +1,2751 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PDF',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PDF.v1" Alias="SAP__PDF"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_SESSION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Session.v1" Alias="SAP__session"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="HeaderType">
+                <Key>
+                    <PropertyRef Name="UniqueId"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="UniqueId" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="BankRef" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="CheckId" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="RemittanceDate" Type="Edm.Date"/>
+                <Property Name="RemitAmount" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="BankGL" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="ClearingDocNum" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="errorcomment" Type="Edm.String" Nullable="false" MaxLength="255"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="ItemTotalAmount" Type="Edm.Decimal" Nullable="false" Precision="24" Scale="variable"/>
+                <Property Name="BalanceDifference" Type="Edm.Decimal" Nullable="false" Precision="25" Scale="variable"/>
+                <Property Name="BalanceCriticality" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__CreateByAssociationControl" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderCbAControl"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.EntityControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType"/>
+                <NavigationProperty Name="_Items" Type="Collection(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemType)" Partner="_Header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="ARPaymentUniqueIdVHType">
+                <Key>
+                    <PropertyRef Name="UniqueId"/>
+                </Key>
+                <Property Name="UniqueId" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="BankRef" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="CheckId" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="RemittanceDate" Type="Edm.Date"/>
+                <Property Name="RemitAmount" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="12"/>
+            </EntityType>
+            <EntityType Name="CustomerCompanyType">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="AccountingClerk" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="ReconciliationAccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="AuthorizationGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CustomerHeadOffice" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="AlternativePayerAccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="PaymentBlockingReason" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PaymentBlockingReason_Text" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="InterestCalculationCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="InterestCalculationDate" Type="Edm.Date"/>
+                <Property Name="IntrstCalcFrequencyInMonths" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CustomerAccountNote" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="APARToleranceGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="HouseBank" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="ItemIsToBePaidSeparately" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="PaytAdviceIsSentbyEDI" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="PhysicalInventoryBlockInd" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="UserAtCustomer" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="AccountingClerkPhoneNumber" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="AccountingClerkFaxNumber" Type="Edm.String" Nullable="false" MaxLength="31"/>
+                <Property Name="AccountingClerkInternetAddress" Type="Edm.String" Nullable="false" MaxLength="130"/>
+                <Property Name="AccountByCustomer" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="IsToBeLocallyProcessed" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CollectiveInvoiceVariant" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="LayoutSortingRule" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="PaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CustomerSupplierClearingIsUsed" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="RecordPaymentHistoryIndicator" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="PaymentMethodsList" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="DeletionIndicator" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CreditMemoPaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DunningNoticeGroup" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="LastInterestCalcRunDate" Type="Edm.Date"/>
+                <Property Name="CustPreviousMasterRecordNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ValueAdjustmentKey" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="CashPlanningGroup" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="SupplierReleaseGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="PersonnelNumber" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="BuyingGroupAccountNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="BillExchChargePaymentTerms" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CheckPaidDurationInDays" Type="Edm.Decimal" Nullable="false" Precision="3"/>
+                <Property Name="CustomerPaymentBlockingReason" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="PaymentMethodSupplement" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="AcctsReceivablePledgingCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="LockboxInternalID" Type="Edm.String" Nullable="false" MaxLength="7"/>
+                <Property Name="IsBusinessPurposeCompleted" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="WithholdingTaxCountry" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="KnownOrNegotiatedLeave" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="DeletionIsBlocked" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="PaymentClearingGroup" Type="Edm.String" Nullable="false" MaxLength="8"/>
+                <Property Name="PaymentReason" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="US_FrgnAcctTaxRcpntCntry" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="US_GlobIntermediaryIdnNumber" Type="Edm.String" Nullable="false" MaxLength="19"/>
+                <Property Name="US_RecipientForeignTaxID" Type="Edm.String" Nullable="false" MaxLength="22"/>
+                <Property Name="US_LobTreatyCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="US_FW8BENReceiveDate" Type="Edm.Date"/>
+                <Property Name="US_FW9ReceiveDate" Type="Edm.Date"/>
+                <Property Name="US_SecondTINNoticeIsIssued" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="US_FrgnRecipientHasPartnership" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="US_FrgnAcctTaxFilingIsRequired" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="US_Chapter4StatusCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DeductiblePercentageRate" Type="Edm.Decimal" Nullable="false" Precision="3"/>
+                <Property Name="AmountInsured" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+            </EntityType>
+            <EntityType Name="OpenItemVHType">
+                <Key>
+                    <PropertyRef Name="DocumentNumber"/>
+                </Key>
+                <Property Name="DocumentNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="FiscalYear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+            </EntityType>
+            <EntityType Name="ARPaymentBankRefVHType">
+                <Key>
+                    <PropertyRef Name="BankRef"/>
+                </Key>
+                <Property Name="BankRef" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="12"/>
+            </EntityType>
+            <EntityType Name="ARPaymentCheckIdVHType">
+                <Key>
+                    <PropertyRef Name="CheckId"/>
+                </Key>
+                <Property Name="CheckId" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="BankRef" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="12"/>
+            </EntityType>
+            <EntityType Name="I_DraftAdministrativeDataType">
+                <Key>
+                    <PropertyRef Name="DraftUUID"/>
+                    <PropertyRef Name="DraftEntityType"/>
+                </Key>
+                <Property Name="DraftUUID" Type="Edm.Guid" Nullable="false"/>
+                <Property Name="DraftEntityType" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftAccessType" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="ProcessingStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="InProcessByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="DraftIsKeptByUser" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="EnqueueStartDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftIsCreatedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsLastChangedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftIsProcessedByMe" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="CreatedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="LastChangedByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="InProcessByUserDescription" Type="Edm.String" Nullable="false" MaxLength="80"/>
+            </EntityType>
+            <EntityType Name="CustomerVHType">
+                <Key>
+                    <PropertyRef Name="Customer"/>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CustomerName" Type="Edm.String" Nullable="false" MaxLength="80"/>
+                <Property Name="CityName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3"/>
+            </EntityType>
+            <EntityType Name="ProfitCenterForCompanyCodeType">
+                <Key>
+                    <PropertyRef Name="CompanyCode"/>
+                    <PropertyRef Name="ProfitCenter"/>
+                </Key>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ProfitCenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ProfitCenter_Text" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ValidityEndDate" Type="Edm.Date"/>
+                <Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ProfitCtrResponsiblePersonName" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="ProfitCtrResponsibleUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ValidityStartDate" Type="Edm.Date"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ProfitCenterStandardHierarchy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Segment" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="ProfitCenterIsBlocked" Type="Edm.String" Nullable="false" MaxLength="1"/>
+                <Property Name="FormulaPlanningTemplate" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="FormOfAddress" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="AddressName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="AdditionalName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="ProfitCenterAddrName3" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="ProfitCenterAddrName4" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="StreetAddressName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="POBox" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CityName" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="PostalCode" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="District" Type="Edm.String" Nullable="false" MaxLength="35"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Region" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="TaxJurisdiction" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="Language" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="PhoneNumber1" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="PhoneNumber2" Type="Edm.String" Nullable="false" MaxLength="16"/>
+                <Property Name="TeleboxNumber" Type="Edm.String" Nullable="false" MaxLength="15"/>
+                <Property Name="TelexNumber" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="FaxNumber" Type="Edm.String" Nullable="false" MaxLength="31"/>
+                <Property Name="DataCommunicationPhoneNumber" Type="Edm.String" Nullable="false" MaxLength="14"/>
+                <Property Name="ProfitCenterPrinterName" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ProfitCenterCreatedByUser" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="ProfitCenterCreationDate" Type="Edm.Date"/>
+            </EntityType>
+            <EntityType Name="ARPaymentStatusVHType">
+                <Key>
+                    <PropertyRef Name="Status"/>
+                </Key>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="12"/>
+            </EntityType>
+            <EntityType Name="CompanyCodeVHType">
+                <Key>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CompanyCodeName" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="CityName" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="Country" Type="Edm.String" Nullable="false" MaxLength="3"/>
+            </EntityType>
+            <EntityType Name="ItemType">
+                <Key>
+                    <PropertyRef Name="UniqueId"/>
+                    <PropertyRef Name="ItemId"/>
+                    <PropertyRef Name="IsActiveEntity"/>
+                </Key>
+                <Property Name="UniqueId" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="ItemId" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="GLAccount" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="GrossAmt" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Discount" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="NetAmt" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="currency" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="ItemCategory" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="InvoiceNumber" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="fiscalyear" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="lineitemno" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="PORef" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="CustReference" Type="Edm.String" Nullable="false" MaxLength="25"/>
+                <Property Name="profitcenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="IO" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Placeholder1" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Placeholder2" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Placeholder3" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Placeholder4" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="Placeholder5" Type="Edm.String" Nullable="false" MaxLength="50"/>
+                <Property Name="InvoiceDate" Type="Edm.Date"/>
+                <Property Name="DocumentNumber" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="OpenItemStatus" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="OpenItemAmount" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="Difference" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="variable"/>
+                <Property Name="DiffGL" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="CreatedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LastChangedBy" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="LastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="HasActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="IsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="__EntityControl" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.EntityControl"/>
+                <Property Name="__FieldControl" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemControl"/>
+                <Property Name="__OperationControl" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemOperationControl"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="DraftAdministrativeData" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.I_DraftAdministrativeDataType"/>
+                <NavigationProperty Name="SiblingEntity" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemType"/>
+                <NavigationProperty Name="_Header" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false" Partner="_Items">
+                    <ReferentialConstraint Property="UniqueId" ReferencedProperty="UniqueId"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="InternalOrderVHType">
+                <Key>
+                    <PropertyRef Name="InternalOrder"/>
+                </Key>
+                <Property Name="InternalOrder" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="InternalOrderDescription" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="OrderType" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="ProfitCenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+            </EntityType>
+            <ComplexType Name="ItemControl">
+                <Property Name="currency" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="Customer" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="DocumentNumber" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="GLAccount" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="IO" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="lineitemno" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="NetAmt" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="profitcenter" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="Text" Type="Edm.Byte" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="HeaderCbAControl">
+                <Property Name="_Items" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="HeaderOperationControl">
+                <Property Name="Edit" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Post" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="RefreshStatus" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="SimulateJE" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="ItemOperationControl">
+                <Property Name="copyItem" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="EntityControl">
+                <Property Name="Updatable" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="Deletable" Type="Edm.Boolean" Nullable="false"/>
+            </ComplexType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <Action Name="Post" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="copyItem" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemType" Nullable="false"/>
+                <Parameter Name="ResultIsActiveEntity" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemType" Nullable="false"/>
+            </Action>
+            <Action Name="Resume" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="Prepare" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="RefreshStatus" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="SimulateJE" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="Edit" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+                <Parameter Name="PreserveChanges" Type="Edm.Boolean" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="Discard" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <Action Name="Activate" EntitySetPath="_it" IsBound="true">
+                <Parameter Name="_it" Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+                <ReturnType Type="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType" Nullable="false"/>
+            </Action>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ARPaymentBankRefVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ARPaymentBankRefVHType"/>
+                <EntitySet Name="ARPaymentCheckIdVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ARPaymentCheckIdVHType"/>
+                <EntitySet Name="ARPaymentStatusVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ARPaymentStatusVHType"/>
+                <EntitySet Name="ARPaymentUniqueIdVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ARPaymentUniqueIdVHType"/>
+                <EntitySet Name="CompanyCodeVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.CompanyCodeVHType"/>
+                <EntitySet Name="CustomerCompany" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.CustomerCompanyType"/>
+                <EntitySet Name="CustomerVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.CustomerVHType"/>
+                <EntitySet Name="Header" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="Header"/>
+                    <NavigationPropertyBinding Path="_Items" Target="Item"/>
+                </EntitySet>
+                <EntitySet Name="InternalOrderVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.InternalOrderVHType"/>
+                <EntitySet Name="Item" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemType">
+                    <NavigationPropertyBinding Path="DraftAdministrativeData" Target="I_DraftAdministrativeData"/>
+                    <NavigationPropertyBinding Path="SiblingEntity" Target="Item"/>
+                    <NavigationPropertyBinding Path="_Header" Target="Header"/>
+                </EntitySet>
+                <EntitySet Name="I_DraftAdministrativeData" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.I_DraftAdministrativeDataType"/>
+                <EntitySet Name="OpenItemVH" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.OpenItemVHType"/>
+                <EntitySet Name="ProfitCenterForCompanyCode" EntityType="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ProfitCenterForCompanyCodeType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.HeaderType/BankRef">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_i_arpay_bankref_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_hdr_z01.bankref'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Bank Reference"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/CheckId">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_i_arpay_checkid_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_hdr_z01.checkid'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Remittance/check num"/>
+                <Annotation Term="SAP__common.Heading" String="Remittance/check number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Remittance/check number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/RemitAmount">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+                <Annotation Term="SAP__common.Label" String="Remittance Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/Currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/BankGL">
+                <Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/Mandatory"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bank GL"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/Customer">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_i_customer_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_hdr_z01.customer'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/CustomerName">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Customer Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/ClearingDocNum">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Payment Document Num"/>
+                <Annotation Term="SAP__common.Heading" String="Payment Document Number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Payment Document Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/FiscalYear">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+                <Annotation Term="SAP__common.Heading" String="Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/CompanyCode">
+                <Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/Mandatory"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_i_companycode_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_hdr_z01.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/Status">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_i_arpay_status_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_hdr_z01.status'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.ValueListWithFixedValues"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/errorcomment">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Char255"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/CreatedBy">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+                <Annotation Term="SAP__common.Heading" String="User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/CreatedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Time Stamp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/LastChangedBy">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+                <Annotation Term="SAP__common.Heading" String="User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/LastChangedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Time Stamp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/LocalLastChangedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Time Stamp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/ItemTotalAmount">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/BalanceDifference">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/BalanceCriticality">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/__CreateByAssociationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/_Items">
+                <Annotation Term="SAP__common.Composition"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/Header">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Items"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Path="__CreateByAssociationControl/_Items"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftRoot">
+                    <Record>
+                        <PropertyValue Property="PreparationAction" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.Prepare"/>
+                        <PropertyValue Property="EditAction" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.Edit"/>
+                        <PropertyValue Property="DiscardAction" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.Discard"/>
+                        <PropertyValue Property="ActivationAction" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.Activate"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CompanyCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Status"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__CreateByAssociationControl</PropertyPath>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Post(SAP__self.HeaderType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Post"/>
+            </Annotations>
+            <Annotations Target="SAP__self.RefreshStatus(SAP__self.HeaderType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/RefreshStatus"/>
+            </Annotations>
+            <Annotations Target="SAP__self.SimulateJE(SAP__self.HeaderType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/SimulateJE"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Edit(SAP__self.HeaderType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/Edit"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/UniqueId">
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_i_arpay_unqid_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_hdr_z01.uniqueid'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="RemitLink Unique ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType">
+                <Annotation Term="SAP__common.Label" String="AR Payment Header Consumption"/>
+                <Annotation Term="SAP__UI.DataPoint" Qualifier="BalanceDiff">
+                    <Record>
+                        <PropertyValue Property="Value" Path="ItemTotalAmount"/>
+                        <PropertyValue Property="Title" String="Balance"/>
+                        <PropertyValue Property="Criticality" Path="BalanceCriticality"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Balance"/>
+                            <PropertyValue Property="ID" String="HeaderBalanceKPI"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.DataPoint#BalanceDiff"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Header Details"/>
+                            <PropertyValue Property="ID" String="HeaderDetails"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Payment Items"/>
+                            <PropertyValue Property="ID" String="PaymentItems"/>
+                            <PropertyValue Property="Target" AnnotationPath="_Items/@SAP__UI.LineItem"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="HeaderItems">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="UniqueId"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="BankRef"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="AR Payment"/>
+                        <PropertyValue Property="TypeNamePlural" String="AR Payment"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="Customer"/>
+                            </Record>
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
+                            <Record Type="SAP__UI.DataField">
+                                <PropertyValue Property="Value" Path="CustomerName"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Refresh Status"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.RefreshStatus(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Simulate JE"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.SimulateJE(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Post JE"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.Post(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.HeaderType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="RemitLink Unique ID"/>
+                            <PropertyValue Property="Value" Path="UniqueId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BankRef"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CheckId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="RemittanceDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="RemitAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Status"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BankGL"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ClearingDocNum"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="FiscalYear"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedBy"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CreatedAt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedBy"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="LastChangedAt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Balance"/>
+                            <PropertyValue Property="Value" Path="ItemTotalAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="Error Comment"/>
+                            <PropertyValue Property="Value" Path="errorcomment"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="UniqueId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="BankRef"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CheckId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="RemittanceDate"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="RemitAmount"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Status"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>UniqueId</PropertyPath>
+                        <PropertyPath>CheckId</PropertyPath>
+                        <PropertyPath>CompanyCode</PropertyPath>
+                        <PropertyPath>Customer</PropertyPath>
+                        <PropertyPath>Status</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Communication.Contact">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>aggregate</String>
+                                <String>groupby</String>
+                                <String>filter</String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>eq</String>
+                        <String>ne</String>
+                        <String>gt</String>
+                        <String>ge</String>
+                        <String>lt</String>
+                        <String>le</String>
+                        <String>and</String>
+                        <String>or</String>
+                        <String>contains</String>
+                        <String>startswith</String>
+                        <String>endswith</String>
+                        <String>any</String>
+                        <String>all</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SupportedFormats">
+                    <Collection>
+                        <String>application/json</String>
+                        <String>application/pdf</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__PDF.Features">
+                    <Record>
+                        <PropertyValue Property="DocumentDescriptionReference" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="DocumentDescriptionCollection" String="MyDocumentDescriptions"/>
+                        <PropertyValue Property="ArchiveFormat" Bool="true"/>
+                        <PropertyValue Property="Border" Bool="true"/>
+                        <PropertyValue Property="CoverPage" Bool="true"/>
+                        <PropertyValue Property="FitToPage" Bool="true"/>
+                        <PropertyValue Property="FontName" Bool="true"/>
+                        <PropertyValue Property="FontSize" Bool="true"/>
+                        <PropertyValue Property="Margin" Bool="true"/>
+                        <PropertyValue Property="Signature" Bool="true"/>
+                        <PropertyValue Property="ResultSizeDefault" Int="20000"/>
+                        <PropertyValue Property="ResultSizeMaximum" Int="20000"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/BankRef">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bank Reference"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/RemitAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+                <Annotation Term="SAP__common.Label" String="Remittance Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/Currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/Customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/Status">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType">
+                <Annotation Term="SAP__common.Label" String="AR Payment Unique ID Value Help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ARPaymentUniqueIdVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/Customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_customer_vh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-i_customercompany.customer'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodestdvh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-i_customercompany.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AccountingClerk">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Clerk Abbrev."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Accounting Clerk Abbreviation"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/ReconciliationAccount">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Reconciliation acct"/>
+                <Annotation Term="SAP__common.Heading" String="Recon.acct"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Reconciliation Account in General Ledger"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AuthorizationGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Authorization"/>
+                <Annotation Term="SAP__common.Heading" String="AuGr"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Authorization Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CustomerHeadOffice">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Head Office"/>
+                <Annotation Term="SAP__common.Heading" String="Hd Office"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Head Office Account Number (in branch accounts)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AlternativePayerAccount">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Alternative payer"/>
+                <Annotation Term="SAP__common.Heading" String="Alt.payer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Account number of an alternative payer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentBlockingReason">
+                <Annotation Term="SAP__common.Text" Path="PaymentBlockingReason_Text"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Payment Block"/>
+                <Annotation Term="SAP__common.Heading" String="Block Ind."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Block Key for Payment"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentBlockingReason_Text">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Payment Block Reason"/>
+                <Annotation Term="SAP__common.Heading" String="Reason for Payment Block"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Reason for Payment Block"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/InterestCalculationCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Interest indicator"/>
+                <Annotation Term="SAP__common.Heading" String="Interest Indicator"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Interest Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/IntrstCalcFrequencyInMonths">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Int.Calc.Freq."/>
+                <Annotation Term="SAP__common.Heading" String="Interest Calc. Frequency"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Interest Calculation Frequency in Months"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/APARToleranceGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tolerance Group"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Tolerance Group for Business Partner/G/L Account"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/HouseBank">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="House Bank"/>
+                <Annotation Term="SAP__common.Heading" String="House Bk"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Short Key for a House Bank"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/ItemIsToBePaidSeparately">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Individual Payment"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Indicator: Pay All Items Separately?"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaytAdviceIsSentbyEDI">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Pmnt advice by EDI"/>
+                <Annotation Term="SAP__common.Heading" String="EDI"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Indicator: Send Payment Advices by EDI"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PhysicalInventoryBlockInd">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Co.code post.block"/>
+                <Annotation Term="SAP__common.Heading" String="B"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Posting block for company code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AccountingClerkPhoneNumber">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Acct.clerks tel.no."/>
+                <Annotation Term="SAP__common.Heading" String="Accting clerk's telephone no."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Accounting clerk's telephone number at business partner"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AccountByCustomer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Account at customer"/>
+                <Annotation Term="SAP__common.Heading" String="Acct at cust"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Our account number at customer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/IsToBeLocallyProcessed">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Local Processing"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Indicator: Local Processing?"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CollectiveInvoiceVariant">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Coll.Invoice Variant"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Collective Invoice Variant"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/LayoutSortingRule">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sort key"/>
+                <Annotation Term="SAP__common.Heading" String="Sort"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key for sorting according to assignment numbers"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentTerms">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Terms of Payment"/>
+                <Annotation Term="SAP__common.Heading" String="PayT"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Terms of Payment Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CustomerSupplierClearingIsUsed">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Clearing with vendor"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Indicator: Clearing between customer and vendor ?"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/RecordPaymentHistoryIndicator">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Record pmnt history"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Indicator: Record Payment History ?"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentMethodsList">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Payment Methods"/>
+                <Annotation Term="SAP__common.Heading" String="Methods"/>
+                <Annotation Term="SAP__common.QuickInfo" String="List of Respected Payment Methods"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/DeletionIndicator">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Co.Cde Deletion Flag"/>
+                <Annotation Term="SAP__common.Heading" String="DelF"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Deletion Flag for Master Record (Company Code Level)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CreditMemoPaymentTerms">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Credit Memo Pyt Term"/>
+                <Annotation Term="SAP__common.Heading" String="CrPT"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Payment Terms Key for Credit Memos"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/DunningNoticeGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Grouping Key"/>
+                <Annotation Term="SAP__common.Heading" String="Grpng Key"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key for Dunning Notice Grouping"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CustPreviousMasterRecordNumber">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Previous Account No."/>
+                <Annotation Term="SAP__common.Heading" String="Pre.Ac.No."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Previous Master Record Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/ValueAdjustmentKey">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Value Adjustment"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Value Adjustment Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CashPlanningGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Planning Group"/>
+                <Annotation Term="SAP__common.Heading" String="Plan. Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/SupplierReleaseGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Release Group"/>
+                <Annotation Term="SAP__common.Heading" String="AGrp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Release Approval Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PersonnelNumber">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Personnel Number"/>
+                <Annotation Term="SAP__common.Heading" String="Pers.No."/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/BuyingGroupAccountNumber">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Buying Group"/>
+                <Annotation Term="SAP__common.Heading" String="Buying Grp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Account Number of Buying Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/BillExchChargePaymentTerms">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="B/Ex. Charges Terms"/>
+                <Annotation Term="SAP__common.Heading" String="B/eC"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Terms of Payment Key for Bill of Exchange Charges"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CustomerPaymentBlockingReason">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Payment Block"/>
+                <Annotation Term="SAP__common.Heading" String="Block Ind."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Block Key for Payment"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentMethodSupplement">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Pmt Meth. Supplement"/>
+                <Annotation Term="SAP__common.Heading" String="PmtMthSu"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Payment method supplement"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AcctsReceivablePledgingCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="AR Pledging Ind."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Accounts Receivable Pledging Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/LockboxInternalID">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Lockbox"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key of the Lockbox to Which the Customer Is to Pay"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/IsBusinessPurposeCompleted">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Purpose Completed"/>
+                <Annotation Term="SAP__common.Heading" String="Business Purpose Completed Flag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Business Purpose Completed Flag"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/WithholdingTaxCountry">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="WTax C/R Key"/>
+                <Annotation Term="SAP__common.Heading" String="WC/R"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Withholding Tax Country/Region Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/KnownOrNegotiatedLeave">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Known/Negotiat.Leave"/>
+                <Annotation Term="SAP__common.Heading" String="Leave"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Short Key for Known/Negotiated Leave"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/DeletionIsBlocked">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="CoCd deletion block"/>
+                <Annotation Term="SAP__common.Heading" String="DeBl"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Deletion bock for master record (company code level)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentClearingGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Payment Clrg Grp ID"/>
+                <Annotation Term="SAP__common.Heading" String="Payment Clearing Group ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Payment Clearing Group ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/PaymentReason">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Payment Reason"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_FrgnAcctTaxRcpntCntry">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Country/Region Key"/>
+                <Annotation Term="SAP__common.Heading" String="C/R"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_SecondTINNoticeIsIssued">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Second TIN Notice"/>
+                <Annotation Term="SAP__common.Heading" String="Second TIN Notice from IRS"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Second TIN Notice from IRS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_FrgnRecipientHasPartnership">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Partnership Int Ind"/>
+                <Annotation Term="SAP__common.Heading" String="Partnership Interest Indicator"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Partnership Interest Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_FrgnAcctTaxFilingIsRequired">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="FATCA Ind"/>
+                <Annotation Term="SAP__common.Heading" String="FATCA Indicator"/>
+                <Annotation Term="SAP__common.QuickInfo" String="US FATCA Indicator"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/IsActiveEntity">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType">
+                <Annotation Term="SAP__common.Label" String="Customer Company"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/CustomerCompany">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.OpenItemVHType/DocumentNumber">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+                <Annotation Term="SAP__common.Heading" String="DocumentNo"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Document Number of an Accounting Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.OpenItemVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.OpenItemVHType/Customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.OpenItemVHType/FiscalYear">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+                <Annotation Term="SAP__common.Heading" String="Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.OpenItemVHType">
+                <Annotation Term="SAP__common.Label" String="Open Customer Invoice Value Help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/OpenItemVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentBankRefVHType/BankRef">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bank Reference"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentBankRefVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentBankRefVHType/Customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentBankRefVHType/Status">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentBankRefVHType">
+                <Annotation Term="SAP__common.Label" String="AR Payment Bank Reference Value Help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ARPaymentBankRefVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentCheckIdVHType/BankRef">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Bank Reference"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentCheckIdVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentCheckIdVHType/Customer">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentCheckIdVHType/Status">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentCheckIdVHType">
+                <Annotation Term="SAP__common.Label" String="AR Payment Check ID Value Help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ARPaymentCheckIdVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftEntityType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Entity ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUser">
+                <Annotation Term="SAP__common.Text" Path="CreatedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUser">
+                <Annotation Term="SAP__common.Text" Path="LastChangedByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftAccessType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Access Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUser">
+                <Annotation Term="SAP__common.Text" Path="InProcessByUserDescription"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsKeptByUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Is Kept By User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsCreatedByMe">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsLastChangedByMe">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftIsProcessedByMe">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By Me"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType">
+                <Annotation Term="SAP__common.Label" String="Draft Administration Data"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/I_DraftAdministrativeData">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="LastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerVHType/Customer">
+                <Annotation Term="SAP__common.Text" Path="CustomerName"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerVHType/Country">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Country/Region Key"/>
+                <Annotation Term="SAP__common.Heading" String="C/R"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerVHType">
+                <Annotation Term="SAP__common.Label" String="Customer Value Help"/>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustomerName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CityName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Country"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/CustomerVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_companycodestdvh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-i_profitcenterforcompanycode.companycode'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenter">
+                <Annotation Term="SAP__common.Text" Path="ProfitCenter_Text"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_profitcentervh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-i_profitcenterforcompanycode.profitcenter'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Profit Center"/>
+                <Annotation Term="SAP__common.Heading" String="Profit Ctr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenter_Text">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Profit Center Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Description of Profit Center"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ControllingArea">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_controllingarea/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-i_profitcenterforcompanycode.controllingarea'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Controlling Area"/>
+                <Annotation Term="SAP__common.Heading" String="COAr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCtrResponsibleUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Responsible"/>
+                <Annotation Term="SAP__common.Heading" String="User Resp."/>
+                <Annotation Term="SAP__common.QuickInfo" String="User Responsible for the Profit Center"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterStandardHierarchy">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Hierarchy Area"/>
+                <Annotation Term="SAP__common.Heading" String="Area"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Profit center area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/Segment">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_segmentstdvh/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-i_profitcenterforcompanycode.segment'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Segment"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Segment for Segmental Reporting"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/FormulaPlanningTemplate">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Form. Planning Temp."/>
+                <Annotation Term="SAP__common.Heading" String="Template"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Template for Formula Planning in Profit Centers"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/POBox">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PO Box"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/PostalCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Postal Code"/>
+                <Annotation Term="SAP__common.Heading" String="PostalCode"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/Country">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Country/Region Key"/>
+                <Annotation Term="SAP__common.Heading" String="C/R"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/Region">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Region"/>
+                <Annotation Term="SAP__common.Heading" String="Rg"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Region (State, Province, County)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/TaxJurisdiction">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Tax Jurisdiction"/>
+                <Annotation Term="SAP__common.Heading" String="Tax Jur."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterPrinterName">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Printer name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Printer name for profit center"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterCreatedByUser">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Created By"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Entered By"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType">
+                <Annotation Term="SAP__common.Label" String="Profit Center For Company Code"/>
+                <Annotation Term="Communication.Contact">
+                    <Record/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ProfitCenterForCompanyCode">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentStatusVHType/Status">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentStatusVHType">
+                <Annotation Term="SAP__common.Label" String="AR Payment Status Value Help"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ARPaymentStatusVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.CompanyCodeVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CompanyCodeVHType/Country">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Country/Region Key"/>
+                <Annotation Term="SAP__common.Heading" String="C/R"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CompanyCodeVHType">
+                <Annotation Term="SAP__common.Label" String="Company Code Value Help"/>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCodeName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CityName"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Country"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/CompanyCodeVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/UniqueId">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="RemitLink Unique ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/ItemId">
+                <Annotation Term="SAP__common.FieldControl" EnumMember="SAP__common.FieldControlType/Mandatory"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="RemitLink Item ID"/>
+                <Annotation Term="SAP__common.Heading" String="RemitLink Unique Item ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="RemitLink Unique Item ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Customer">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/Customer"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_customercompany/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_itm_z01.customer'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/GLAccount">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/GLAccount"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_glaccount/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_itm_z01.glaccount'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="G/L Account"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/GrossAmt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+                <Annotation Term="SAP__common.Label" String="Gross Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Discount">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+                <Annotation Term="SAP__common.Label" String="Discount Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/NetAmt">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/NetAmt"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+                <Annotation Term="SAP__common.Label" String="Net Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/currency">
+                <Annotation Term="SAP__common.IsCurrency"/>
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/currency"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/ItemCategory">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Item Category"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/InvoiceNumber">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Invoice Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/fiscalyear">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Fiscal Year"/>
+                <Annotation Term="SAP__common.Heading" String="Year"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/lineitemno">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/lineitemno"/>
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Item"/>
+                <Annotation Term="SAP__common.Heading" String="Itm"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Number of Line Item Within Accounting Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/PORef">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="PO_Reference"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/CustReference">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Cust. Reference"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/profitcenter">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/profitcenter"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/i_profitcenterforcompanycode/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_itm_z01.profitcenter'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Profit Center"/>
+                <Annotation Term="SAP__common.Heading" String="Profit Ctr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/IO">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/IO"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_vh_internalorder/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_itm_z01.io'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Internal Order"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Text">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/Text"/>
+                <Annotation Term="SAP__common.Label" String="Text"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Item Text"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Placeholder1">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="PLACEHOLDER1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Place holder1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Placeholder2">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="PLACEHOLDER2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Place holder2"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Placeholder3">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="PLACEHOLDER3"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Place holder3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Placeholder4">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="PLACEHOLDER4"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Place holder4"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Placeholder5">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="PLACEHOLDER5"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Place holder5"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/InvoiceDate">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Invoice Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/DocumentNumber">
+                <Annotation Term="SAP__common.FieldControl" Path="__FieldControl/DocumentNumber"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.ValueListReferences">
+                    <Collection>
+                        <String>../../../../srvd_f4/sap/y0fi_vh_openitem/0001;ps='srvd-y0fi_ui_arpay_srv_z01-0001';va='com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.et-y0fi_c_arpay_itm_z01.documentnumber'/$metadata</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__common.Label" String="Billing Doc Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/OpenItemStatus">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/OpenItemAmount">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+                <Annotation Term="SAP__common.Label" String="Invoice Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Difference">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__measures.ISOCurrency" Path="currency"/>
+                <Annotation Term="SAP__common.Label" String="Variance Amount"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/DiffGL">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="G/L Account"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/Status">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Status"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/CreatedBy">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+                <Annotation Term="SAP__common.Heading" String="User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/CreatedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Time Stamp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/LastChangedBy">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+                <Annotation Term="SAP__common.Heading" String="User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/LastChangedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Time Stamp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/LocalLastChangedAt">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Time Stamp"/>
+                <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+                <Annotation Term="SAP__common.Heading" String="CoCd"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/HasDraftEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has Draft"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has draft document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/DraftEntityCreationDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/DraftEntityLastChangeDateTime">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/HasActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Has active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Has active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/IsActiveEntity">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Is active"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Draft - Indicator - Is active document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/__EntityControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/__FieldControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType/__OperationControl">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__UI.HiddenFilter"/>
+                <Annotation Term="SAP__UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/Item">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Header"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftNode">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.DraftActivationVia">
+                    <Collection>
+                        <String>SAP__self.Container/Header</String>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="Filterable" Bool="true"/>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityCreationDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="DraftEntityLastChangeDateTime"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__FieldControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>__EntityControl</PropertyPath>
+                                <PropertyPath>__FieldControl</PropertyPath>
+                                <PropertyPath>__OperationControl</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Path="__EntityControl/Deletable"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Path="__EntityControl/Updatable"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.copyItem(SAP__self.ItemType)">
+                <Annotation Term="SAP__core.OperationAvailable" Path="_it/__OperationControl/copyItem"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ItemType">
+                <Annotation Term="SAP__common.Label" String="AR Payment Item Consumption Z01"/>
+                <Annotation Term="SAP__UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Item Data"/>
+                            <PropertyValue Property="ID" String="HeaderFacet"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.FieldGroup#Items"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.Facets">
+                    <Collection>
+                        <Record Type="SAP__UI.ReferenceFacet">
+                            <PropertyValue Property="Label" String="Item Details"/>
+                            <PropertyValue Property="ID" String="ItemGeneral"/>
+                            <PropertyValue Property="Target" AnnotationPath="@SAP__UI.Identification"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.FieldGroup" Qualifier="Items">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="ItemId"/>
+                                </Record>
+                                <Record Type="SAP__UI.DataField">
+                                    <PropertyValue Property="Value" Path="Customer"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__UI.Identification">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemId"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemCategory"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="InvoiceNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GLAccount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SAP Billing Document"/>
+                            <PropertyValue Property="Value" Path="DocumentNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Difference"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CustReference"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NetAmt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SAP Open Item Amount"/>
+                            <PropertyValue Property="Value" Path="OpenItemAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IO"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Customer"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="fiscalyear"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="PORef"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SAP Open Item Status"/>
+                            <PropertyValue Property="Value" Path="OpenItemStatus"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GrossAmt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Discount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Status"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="profitcenter"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Text"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="InvoiceDate"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="DiffGL"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="CompanyCode"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="SAP__UI.LineItem">
+                    <Collection>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemId"/>
+                            <Annotation Term="SAP__UI.Importance" EnumMember="SAP__UI.ImportanceType/High"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="ItemCategory"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="InvoiceNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="GLAccount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SAP Billing Document"/>
+                            <PropertyValue Property="Value" Path="DocumentNumber"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="Difference"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="NetAmt"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="Copy"/>
+                            <PropertyValue Property="Action" String="com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.copyItem(com.sap.gateway.srvd.y0fi_ui_arpay_srv_z01.v0001.ItemType)"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="SAP__UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SAP Open Item Amount"/>
+                            <PropertyValue Property="Value" Path="OpenItemAmount"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Value" Path="IO"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="SAP Open Item Status"/>
+                            <PropertyValue Property="Value" Path="OpenItemStatus"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="Communication.Contact">
+                    <Record/>
+                </Annotation>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType/InternalOrder">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Internal Order"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType/CompanyCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Company Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType/ControllingArea">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Controlling Area"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType/OrderType">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Order Type"/>
+                <Annotation Term="SAP__common.Heading" String="Type"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType/ProfitCenter">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Profit Center"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType">
+                <Annotation Term="SAP__common.Label" String="IO Value Help by CC"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/InternalOrderVH">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="true"/>
+                        <PropertyValue Property="UnsupportedExpressions" EnumMember="SAP__capabilities.SearchExpressions/AND SAP__capabilities.SearchExpressions/OR SAP__capabilities.SearchExpressions/NOT SAP__capabilities.SearchExpressions/group SAP__capabilities.SearchExpressions/phrase"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__core.OptimisticConcurrency">
+                    <Collection/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/DraftUUID">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft (Technical ID)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/ProcessingStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/EnqueueStartDateTime">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Locked Since"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreatedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Created By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangedByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/InProcessByUserDescription">
+                <Annotation Term="SAP__UI.Hidden"/>
+                <Annotation Term="SAP__common.Label" String="Draft In Process By (Description)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.HeaderType/RemittanceDate">
+                <Annotation Term="SAP__common.Label" String="Remittance Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/UniqueId">
+                <Annotation Term="SAP__common.Label" String="RemitLink Unique ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/CheckId">
+                <Annotation Term="SAP__common.Label" String="Remittance/check num"/>
+                <Annotation Term="SAP__common.Heading" String="Remittance/check number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Remittance/check number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/RemittanceDate">
+                <Annotation Term="SAP__common.Label" String="Remittance Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentUniqueIdVHType/CustomerName">
+                <Annotation Term="SAP__common.Label" String="Customer Name"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/InterestCalculationDate">
+                <Annotation Term="SAP__common.Label" String="Last Key Date"/>
+                <Annotation Term="SAP__common.Heading" String="Key Date Lst Int.Calc"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Key Date of Last Interest Calculation"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CustomerAccountNote">
+                <Annotation Term="SAP__common.Label" String="Account Memo"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Memo"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/UserAtCustomer">
+                <Annotation Term="SAP__common.Label" String="User at customer"/>
+                <Annotation Term="SAP__common.Heading" String="User at cust."/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AccountingClerkFaxNumber">
+                <Annotation Term="SAP__common.Label" String="Acctg clerk's fax"/>
+                <Annotation Term="SAP__common.Heading" String="Accounting clerk's fax"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Accounting clerk's fax number at the customer/vendor"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AccountingClerkInternetAddress">
+                <Annotation Term="SAP__common.Label" String="Clrk's internet add."/>
+                <Annotation Term="SAP__common.Heading" String="Clerk's internet address"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internet address of partner company clerk"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/LastInterestCalcRunDate">
+                <Annotation Term="SAP__common.Label" String="Last Int. Calc."/>
+                <Annotation Term="SAP__common.Heading" String="LastIntCal"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Date of Last Interest Calculation Run"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/CheckPaidDurationInDays">
+                <Annotation Term="SAP__common.Label" String="Check Cashing Time"/>
+                <Annotation Term="SAP__common.Heading" String="GrP"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Probable Time Until Check Is Paid"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_GlobIntermediaryIdnNumber">
+                <Annotation Term="SAP__common.Label" String="US Recipient GIIN"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_RecipientForeignTaxID">
+                <Annotation Term="SAP__common.Label" String="US Recipient FTID"/>
+                <Annotation Term="SAP__common.Heading" String="US Recipient Foreign Tax ID"/>
+                <Annotation Term="SAP__common.QuickInfo" String="US Recipient Foreign Tax ID"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_LobTreatyCode">
+                <Annotation Term="SAP__common.Label" String="LOB Treaty Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_FW8BENReceiveDate">
+                <Annotation Term="SAP__common.Label" String="W8 Form Rec Date"/>
+                <Annotation Term="SAP__common.Heading" String="W8 Form Received Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="US W8 Form Received Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_FW9ReceiveDate">
+                <Annotation Term="SAP__common.Label" String="W9 Form Rec Date"/>
+                <Annotation Term="SAP__common.Heading" String="W9 Form Received Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="US W8 Form Received Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/US_Chapter4StatusCode">
+                <Annotation Term="SAP__common.Label" String="Chaptr 4 Status Code"/>
+                <Annotation Term="SAP__common.Heading" String="Chapter 4 Status Code"/>
+                <Annotation Term="SAP__common.QuickInfo" String="US Chapter 4 Status Code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/DeductiblePercentageRate">
+                <Annotation Term="SAP__common.Label" String="Deductible"/>
+                <Annotation Term="SAP__common.Heading" String="Ded"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Deductible Percentage Rate"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerCompanyType/AmountInsured">
+                <Annotation Term="SAP__common.Label" String="Amount Insured"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ARPaymentCheckIdVHType/CheckId">
+                <Annotation Term="SAP__common.Label" String="Remittance/check num"/>
+                <Annotation Term="SAP__common.Heading" String="Remittance/check number"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Remittance/check number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/CreationDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Created On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.I_DraftAdministrativeDataType/LastChangeDateTime">
+                <Annotation Term="SAP__common.Label" String="Draft Last Changed On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerVHType/CustomerName">
+                <Annotation Term="SAP__common.Label" String="Name of Customer"/>
+                <Annotation Term="SAP__common.Heading" String="Customer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CustomerVHType/CityName">
+                <Annotation Term="SAP__common.Label" String="City"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ValidityEndDate">
+                <Annotation Term="SAP__common.Label" String="Valid To"/>
+                <Annotation Term="SAP__common.Heading" String="to"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Valid To Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCtrResponsiblePersonName">
+                <Annotation Term="SAP__common.Label" String="Person Resp. for PC"/>
+                <Annotation Term="SAP__common.Heading" String="Person Responsible for Profit Center"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Person Responsible for Profit Center"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ValidityStartDate">
+                <Annotation Term="SAP__common.Label" String="Valid From"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Valid-From Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/Department">
+                <Annotation Term="SAP__common.Label" String="Department"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterIsBlocked">
+                <Annotation Term="SAP__common.Label" String="Lock indicator"/>
+                <Annotation Term="SAP__common.Heading" String="Lock indic"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/FormOfAddress">
+                <Annotation Term="SAP__common.Label" String="Title"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/AddressName">
+                <Annotation Term="SAP__common.Label" String="Name"/>
+                <Annotation Term="SAP__common.Heading" String="Name 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name 1"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/AdditionalName">
+                <Annotation Term="SAP__common.Label" String="Name 2"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterAddrName3">
+                <Annotation Term="SAP__common.Label" String="Name 3"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterAddrName4">
+                <Annotation Term="SAP__common.Label" String="Name 4"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/StreetAddressName">
+                <Annotation Term="SAP__common.Label" String="Street"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Street and House Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/CityName">
+                <Annotation Term="SAP__common.Label" String="City"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/District">
+                <Annotation Term="SAP__common.Label" String="District"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/Language">
+                <Annotation Term="SAP__common.Label" String="Language Key"/>
+                <Annotation Term="SAP__common.Heading" String="Language"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/PhoneNumber1">
+                <Annotation Term="SAP__common.Label" String="Telephone 1"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First telephone number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/PhoneNumber2">
+                <Annotation Term="SAP__common.Label" String="Telephone 2"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Second telephone number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/TeleboxNumber">
+                <Annotation Term="SAP__common.Label" String="Telebox Number"/>
+                <Annotation Term="SAP__common.Heading" String="Telebox"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/TelexNumber">
+                <Annotation Term="SAP__common.Label" String="Telex Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/FaxNumber">
+                <Annotation Term="SAP__common.Label" String="Fax Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/DataCommunicationPhoneNumber">
+                <Annotation Term="SAP__common.Label" String="Data line"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Data communication line no."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ProfitCenterForCompanyCodeType/ProfitCenterCreationDate">
+                <Annotation Term="SAP__common.Label" String="Entered On"/>
+                <Annotation Term="SAP__common.Heading" String="Ent. On"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CompanyCodeVHType/CompanyCodeName">
+                <Annotation Term="SAP__common.Label" String="Company Name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Name of Company Code or Company"/>
+            </Annotations>
+            <Annotations Target="SAP__self.CompanyCodeVHType/CityName">
+                <Annotation Term="SAP__common.Label" String="City"/>
+            </Annotations>
+            <Annotations Target="SAP__self.InternalOrderVHType/InternalOrderDescription">
+                <Annotation Term="SAP__common.Label" String="Internal Order Desc."/>
+                <Annotation Term="SAP__common.Heading" String="Internal Order Description"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Internal Order Description"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
